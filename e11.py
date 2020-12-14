@@ -30,15 +30,13 @@ def __target__():
             //
             /""")
     print(Fore.YELLOW + "\nHeloo , Welcome Back ;)")
-    time.sleep(0.5)
+    time.sleep(2)
     target = input(Fore.BLUE + "\n[" + Fore.RED + "!" + Fore.BLUE + "]" + Fore.RED + " ~ " + Fore.YELLOW + "Pleass Enter Your address Target" + Fore.GREEN + " ==>  ")
     if target == "" or None:
-        try:
             print(Fore.RED + "\n[!] ~ Error : Your Target Is None Or Not Found ;(")
             time.sleep(0.4)
             sys.exit()
-        except:
-            pass
+
     if not "http" in target or not "https" in target:
         target = "http://" + target
     r1 = target + "/" + "/wp-content/plugins/"
@@ -60,9 +58,9 @@ def __target__():
         wp2 = target + "/" + i
         r2 = requests.get(wp2)
         if r2.status_code == 404 or r2.status_code == 500:
-            print(Fore.RED + "[-]" + Fore.RED + wp2 + Fore.YELLOW + " > " + Fore.RED + "Not Found ;(")
+            print(Fore.RED + "[-]  " + Fore.RED + wp2 + Fore.YELLOW + " > " + Fore.RED + "Not Found ;(")
         else:
-            print(Fore.GREEN + "[+]" + Fore.GREEN + wp2 + Fore.YELLOW + " > " + Fore.GREEN + "Found ;)")
-    time.sleep(1)
+            print(Fore.GREEN + "[+]  " + Fore.GREEN + wp2 + Fore.YELLOW + " > " + Fore.GREEN + "Found ;)")
+    time.sleep(4)
     print(Fore.BLUE + "\n[*] ~ Good Bay ;)))")
 __target__()
