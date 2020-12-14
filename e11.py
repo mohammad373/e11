@@ -41,6 +41,7 @@ def __target__():
         target = "http://" + target
     r1 = target + "/" + "/wp-content/plugins/"
     wp = requests.get(r1)
+    print("")
     if wp.status_code == 404 or wp.status_code == 500:
         try:
             time.sleep(0.5)
@@ -50,9 +51,9 @@ def __target__():
         except:
             pass
     else:
-        time.sleep(0.5)
+        time.sleep(1)
         print(Fore.GREEN + "\n[+] ~ ok Your Target Is Word Press ;)")
-        time.sleep(0.5)
+        time.sleep(2)
     my_list = ["xmlrpc.php" , "xmlrpc" , "xmlrpc/login" , "xmlrpc/admin"]
     for i in my_list:
         wp2 = target + "/" + i
